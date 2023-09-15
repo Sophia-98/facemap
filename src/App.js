@@ -79,7 +79,7 @@
 
     onButtonSubmit = () => {
       this.setState({ imageURL: this.state.input });
-      fetch('http://localhost:3000/imageurl', {
+      fetch('https://face-map-api.onrender.com/imageurl', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ input: this.state.input}) // Ensure this is correct
@@ -87,7 +87,7 @@
       .then(response => response.json())
       .then(response => {
           if (response) {
-            fetch('http://localhost:3000/image', {
+            fetch('https://face-map-api.onrender.com/image', {
           method: 'put',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ id: this.state.user.id}) // Ensure this is correct
